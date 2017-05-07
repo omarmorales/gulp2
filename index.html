@@ -11,10 +11,29 @@
 	<title>Gulp</title>
 </head>
 <body ng-app="myApp" ng-controller="RestoCtrl">
-	<h1>{{1+1}}</h1>
-	
-
-
+	<div class="container">
+		<h1 class="center-align">Melp</h1>
+		<div class="row">
+			<div class="col s12">
+				<table>
+					<thead>
+						<tr>
+							<th>nombre</th>
+							<th></th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="x in restosData">
+							<td>{{ x.name }}</td>
+							<td>{{  }}</td>
+							<td>{{  }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
     <!--Import jQuery-->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <!--Import AngularJS -->
