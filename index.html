@@ -52,7 +52,7 @@
 			</form>
 		</div>
 		<div class="row">
-			<div class="col s12 m6" dir-paginate="x in restos | itemsPerPage: 6 | filter:search">
+			<div class="col s12 m6" dir-paginate="x in restos | itemsPerPage: 10 | filter:search | orderBy:'-rating'">
 				<div class="card">
 					<div class="card-content card-height">
 						<span class="card-title center-align">{{ x.name }}</span>
