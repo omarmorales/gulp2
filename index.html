@@ -11,6 +11,18 @@
 	<title>Gulp</title>
 </head>
 <body ng-app="myApp" ng-controller="RestosCtrl">
+	<div id="fb-root"></div>
+	<script>
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=125716641313211";
+			fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+	</script>
+
+
 	<div class="container">
 		<h1 class="center-align">Melp</h1>
 		<h3 class="center-align">Find the best dining options in Mexico!</h3>
@@ -44,7 +56,7 @@
 								</div>
 							</li>
 						</ul>
-
+						<div class="fb-like" data-href="{{x.conact.site}}" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
 					</div>
 					<div class="card-action">
 						<div class="center-align" star-rating rating-value="x.rating" max=5 ></div>
