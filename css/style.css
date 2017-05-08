@@ -3,11 +3,14 @@ ul.rating {
    width: 100%;
    padding: 0;
    list-style: none;
- }
- ul.rating li {
+}
+ul.rating li {
    display: inline-block;
    color: #ccc;
- }
- ul.rating li.filled {
+}
+ul.rating li.filled {
    color: #444;
- }
+}
+.card-height{
+	height: 335px; 
+}

@@ -11,18 +11,6 @@
 	<title>Gulp</title>
 </head>
 <body ng-app="myApp" ng-controller="RestosCtrl">
-	<div id="fb-root"></div>
-	<script>
-		(function(d, s, id) {
-			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) return;
-			js = d.createElement(s); js.id = id;
-			js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=125716641313211";
-			fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));
-	</script>
-
-
 	<div class="container">
 		<h1 class="center-align">Melp</h1>
 		<h3 class="center-align">Find the best dining options in Mexico!</h3>
@@ -38,25 +26,20 @@
 		<div class="row">
 			<div class="col s12 m6" dir-paginate="x in restos | itemsPerPage: 6 | filter:search">
 				<div class="card">
-					<div class="card-content">
+					<div class="card-content card-height">
 						<span class="card-title center-align">{{ x.name }}</span>
-						<ul class="collapsible" data-collapsible="accordion">
-							<li>
-								<div class="collapsible-header"><i class="material-icons">contacts</i>Contact</div>
-								<div class="collapsible-body">
-									<a href="{{x.contact.site}}">{{x.contact.site}}</a>
-									<p>{{ x.contact.email }}</p>
-									<p>{{ x.contact.phone }}</p>
-								</div>
+						<ul class="collection with-header">
+							<li class="collection-header"><i class="material-icons left">contacts</i>Contact</li>
+							<li class="collection-item">
+								<span>Website: </span><a href="{{x.contact.site}}">{{x.contact.site}}</a>
+								<p>Email: {{ x.contact.email }}</p>
+								<p>Phone: {{ x.contact.phone }}</p>								
 							</li>
-							<li>
-								<div class="collapsible-header"><i class="material-icons">location_on</i>Address</div>
-								<div class="collapsible-body">
-									<p>{{ x.address.street }}, {{ x.address.city }}, {{ x.address.state }} </p>
-								</div>
+							<li class="collection-header"><i class="material-icons left">location_on</i>Address</li>
+							<li class="collection-item">
+								<p>Address: {{ x.address.street }}, {{ x.address.city }}, {{ x.address.state }} </p>							
 							</li>
 						</ul>
-						<div class="fb-like" data-href="{{x.conact.site}}" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
 					</div>
 					<div class="card-action">
 						<div class="center-align" star-rating rating-value="x.rating" max=5 ></div>
@@ -84,8 +67,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
     <!--Include ng-map.min.js-->
     <script src="bower_components/ngmap/build/scripts/ng-map.min.js"></script>
-    <!--Include Google maps-->
-    <script src="http://maps.google.com/maps/api/js"></script>
     <!--API Key-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXXaqyEo9bfGrPEqm2ClDkXRnrxqH_Vb0"></script>
     <!--Import app.js -->
