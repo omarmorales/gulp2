@@ -13,9 +13,29 @@
 	<title>Gulp</title>
 </head>
 <body ng-app="myApp" ng-controller="RestosCtrl">
+    <nav>
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo courgette">Melp<i class="material-icons right">restaurant</i></a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="#">
+              <i class="material-icons">home</i>
+            </a></li>
+            <li><a href="#">Recomendaciones</a></li>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
+            <li><a href="#">
+              <i class="material-icons">home</i>
+            </a></li>
+            <li><a href="#">Recomendaciones</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 	<div class="container">
 		<h1 class="center-align courgette title">Melp</h1>
-		<h3 class="center-align courgette subtitle">Find the best dining options in Mexico!</h3>
+		<h3 class="center-align courgette subtitle">Find the best dining options in Mexico City!</h3>
 		<div class="row">
 			<map zoom="17" center="[19.440057053713137, -99.12704709742486]">
 				<marker ng-repeat="location in restos" position="{{location.address.location.lat}},{{location.address.location.lng}}" />
