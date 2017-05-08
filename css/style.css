@@ -1,0 +1,13 @@
+ul.rating {
+   display: block;
+   width: 100%;
+   padding: 0;
+   list-style: none;
+ }
+ ul.rating li {
+   display: inline-block;
+   color: #ccc;
+ }
+ ul.rating li.filled {
+   color: #444;
+ }
