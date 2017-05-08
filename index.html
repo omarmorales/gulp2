@@ -15,8 +15,13 @@
 		<h1 class="center-align">Melp</h1>
 		<h3 class="center-align">Find the best dining options in Mexico!</h3>
 		<div class="row">
+			<map zoom="17" center="[19.440057053713137, -99.12704709742486]">
+				<marker ng-repeat="location in restos" position="{{location.address.location.lat}},{{location.address.location.lng}}" />
+			</map>
+		</div>
+		<div class="row">
 			<form>
-				<div class="input-field col s8 offset-s2">
+				<div class="input-field col s8">
 					<i class="material-icons prefix">search</i>
 					<input type="text" id="icon_prefix" class="validate" ng-model="search">
 					<label for="icon_prefix">Search</label>
@@ -48,13 +53,6 @@
 				</div>
 			</div>
 			<dir-pagination-controls class="center-align"></dir-pagination-controls>
-		</div>
-		<div class="row">
-			<map zoom="11" center="[40.74, -74.18]">
-				<marker position="[40.74, -74.18]" />
-				<shape name="circle" radius="400" center="[40.74,-74.18]" radius="4000" />
-				<control name="overviewMap" opened="true" />
-			</map>
 		</div>
 	</div>
     <!--Import jQuery-->
