@@ -27,20 +27,28 @@
 			<div class="col s12 m6" dir-paginate="x in restos | itemsPerPage: 6 | filter:search">
 				<div class="card">
 					<div class="card-content">
-						<span class="card-title">{{ x.name }}</span>
-						<h5>Contact</h5>
-						<p>{{ x.contact.site }}</p>
-						<p>{{ x.contact.email }}</p>
-						<p>{{ x.contact.phone }}</p>
-						<h5>Address</h5>
-						<p>{{ x.address.street }}</p>
-						<p>{{ x.address.city }}</p>
-						<p>{{ x.address.state }}</p>
+						<span class="card-title center-align">{{ x.name }}</span>
+						<ul class="collapsible" data-collapsible="accordion">
+							<li>
+								<div class="collapsible-header"><i class="material-icons">contacts</i>Contact</div>
+								<div class="collapsible-body">
+									<a href="{{x.contact.site}}">{{x.contact.site}}</a>
+									<p>{{ x.contact.email }}</p>
+									<p>{{ x.contact.phone }}</p>
+								</div>
+							</li>
+							<li>
+								<div class="collapsible-header"><i class="material-icons">location_on</i>Address</div>
+								<div class="collapsible-body">
+									<p>{{ x.address.street }}, {{ x.address.city }}, {{ x.address.state }} </p>
+								</div>
+							</li>
+						</ul>
+
 					</div>
 					<div class="card-action">
-						<h5>Rating</h5>
-						<div star-rating rating-value="x.rating" max=5 ></div>
-						<p>{{x.rating}} de {{5}}</p>
+						<div class="center-align" star-rating rating-value="x.rating" max=5 ></div>
+						<p class="center-align">{{x.rating}} de {{5}}</p>
 					</div>
 				</div>
 			</div>
